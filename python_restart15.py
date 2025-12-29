@@ -1,10 +1,8 @@
-http_status = 500
+http_status = 200
 
 if http_status == 200 or http_status == 201:
     print("Success")
-elif http_status == 400:
-    print("Bad Request")
-elif http_status == 404:
+elif http_status == 400 or http_status == 404:
     print("Not Found")
 elif http_status == 500:
     print("Internal Server Error")
@@ -15,7 +13,7 @@ else:
 match http_status:
     case 200 | 201:
         print("Success")
-    case 404:
+    case 400 | 404:
         print("Not Found")
     case 500:
         print("Internal Server Error")
